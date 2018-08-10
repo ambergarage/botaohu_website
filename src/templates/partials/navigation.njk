@@ -6,7 +6,7 @@
             <a href="#top" class="logo">
             {% if site.logo %}
                 <img src="{{ site.logo }}" alt="" />
-            {% endif %} 
+            {% endif %}
             </a>
         </div>
         <div class="mobile-nav ">
@@ -15,9 +15,40 @@
         <!-- Main Menu -->
         <div class="inner-nav desktop-nav">
             <ul class="clearlist scroll-nav local-scroll">
-            {% for link, title in site.menu %}
-                <li><a href="#{{ link }}">{{ title }}</a></li>
-            {% endfor %}
+                <!-- Item With Sub -->
+                <li>
+                    <a href="#" class="mn-has-sub">Art <i class="fa fa-angle-down"></i></a>
+
+                    <!-- Sub -->
+                    <ul class="mn-sub" >
+                        {% for project in site.projects %}
+                          {% if project.type == "art" %}
+                            <li><a href="#{{ project.id }}" data-owl-slider="#home" data-owl-slider-index="{{ loop.index0 }}" class="slider-btn" >{{ project.title }}</a></li>
+                          {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <!-- End Sub -->
+
+                </li>
+                <!-- End Item With Sub -->
+
+                <!-- Item With Sub -->
+                <li>
+                    <a href="#" class="mn-has-sub">Tech <i class="fa fa-angle-down"></i></a>
+
+                    <!-- Sub -->
+                    <ul class="mn-sub" >
+                        {% for project in site.projects %}
+                          {% if project.type == "tech" %}
+                            <li><a href="#{{ project.id }}" data-owl-slider="#home" data-owl-slider-index="{{ loop.index0 }}" class="slider-btn">{{ project.title }}</a></li>
+                          {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <!-- End Sub -->
+
+                </li>
+                <!-- End Item With Sub -->
+                <li><a href="#about">About</a></li>
             </ul>
         </div>
     </div>

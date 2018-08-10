@@ -1,27 +1,51 @@
-menu:
-  home: City Of Sparkles 
-  about: about
-  experience: VR experience
-  team: Team
-
-title: City Of Sparkles
-subtitle: an Interactive Virtual Reality Experiment for Storytelling based on Twitter Real-time Data
-keywords: Virtual Reality,Particles,Twitter,Visualization
-description: City of Sparkles is an interactive virtual reality experiment for storytelling based on Twitter Real-time Data.
-google_analytics_id: UA-76493832-13
-url: https://cityofsparkles.art
-mailchimp_url: https://skywand.us13.list-manage.com/subscribe/post?u=8a6771e33469a0be865f154f1&id=c14647f4b1
-contact_email: info@cityofsparkles.art
-logo: 
-favicon:
+title: Amber Garage
+subtitle: a Silicon Valley based creative art and tech studio
+keywords: Virtual Reality,Creative Studio,SLAM,Robotics,Augmented Reality,Mixed Reality,MR,VR,AR
+description: a Silicon Valley based creative art and tech studio
+url: https://ambergarage.com
+contact_email: info@ambergarage.com
+logo: images/logo-white.png
+favicon: images/favicon.png
+google_analytics_id: UA-76493832-2
+mailchimp_url:
 
 author:
   name: Amber Garage
   url: https://ambergarage.com
-  slogan: a Silicon Valley based creative art & tech studio 
-  social_media: 
+  slogan: a Silicon Valley based creative art & tech studio
+  social_media:
     facebook: ambergarage
     instagram: amber.garage
     youtube: ambergarage
     vimeo: ambergarage
     twitter: ambergarage
+
+projects:
+  - id: cityofsparkles
+    type: art
+    title: City of Sparkles
+    subtitle: An Interactive Virtual Reality Experiment for Storytelling based on Twitter Real-time Data
+    url: cityofsparkles.art
+    bgvideo_ytid: OKU9gdLisc4
+    trailer_url: https://youtu.be/508if1GD8Ao?v=?cc_load_policy=0&controls=0&fs=1&iv_load_policy=3&loop=0&rel=0&showinfo=0&modestbranding=1&autoplay=1
+  - id: holokit
+    type: tech
+    title: HoloKit
+    subtitle:
+    url: holokit.io
+    bgvideo_ytid: -wAXphBPj04
+    trailer_url: https://vimeo.com/220422433
+  - id: cityvr
+    type: art
+    title: The City VR Experience
+    subtitle: Walk like a giant alongside skyscrapers
+    url: cityvr.com
+    bgvideo_ytid: z1ey7ZEN8k4
+    trailer_url: https://vimeo.com/184466672
+  - id: skywand
+    type: tech
+    title: Skywand
+    subtitle: IMMERSIVE MOTION CONTROL FOR AERIAL CINEMATOGRAPHY
+    url: skywand.com
+    bgvideo_ytid: 4Z1huFzF5bY
+    trailer_url: https://vimeo.com/163223379
