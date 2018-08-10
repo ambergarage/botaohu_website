@@ -5,14 +5,11 @@
 import 'bootstrap';
 import 'jquery.easing';
 import 'smoothscroll-for-websites';
-
-// console.log(window.SmoothScroll);
-
 import 'jquery.scrollto';
 import 'jquery.localscroll';
 import 'jquery-countto';
 import 'jquery.appear';
-import 'jquery.sticky';
+import 'jquery-sticky'; // has to be 1.0.3
 import 'jquery-parallax';
 import 'fitvids.1.1.0';
 import 'owl-carousel/owl-carousel/owl.carousel';
@@ -33,7 +30,6 @@ import Masonry from 'masonry-layout';
 jQueryBridget('isotope', Isotope, jQuery);
 jQueryBridget('masonry', Masonry, jQuery);
 jQueryBridget('imagesLoaded', ImagesLoaded, jQuery);
-
 
 (function($){
     "use strict"; // Start of use strict
@@ -59,11 +55,18 @@ jQueryBridget('imagesLoaded', ImagesLoaded, jQuery);
                 });
             }),
             $.Deferred(function( promise ) {
-                $(".player").YTPlayer({
-                    onReady: function( player ) {
-                        promise.resolve();
-                    }
-                });
+                if ($(".player").length == 0) {
+                  promise.resolve();
+                } else {
+                  $(".player").YTPlayer({
+                      onReady: function( player ) {
+                          promise.resolve();
+                      },
+                      onError: function( player ) {
+                          promise.resolve();
+                      }
+                  });
+                }
             })
         ).done(function() {
             $(".page-loader div").fadeOut();
@@ -468,8 +471,8 @@ jQueryBridget('imagesLoaded', ImagesLoaded, jQuery);
         // Accordion
         $(".accordion").each(function(){
             var allPanels = $(this).children("dd").hide();
-            $(this).children("dd").first().slideDown("easeOutExpo");
-            $(this).children("dt").children("a").first().addClass("active");
+            //$(this).children("dd").first().slideDown("easeOutExpo");
+            //$(this).children("dt").children("a").first().addClass("active");
 
             $(this).children("dt").children("a").click(function(){
                 var current = $(this).parent().next("dd");

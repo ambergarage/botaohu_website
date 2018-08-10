@@ -91,7 +91,7 @@
     "jquery.mb.ytplayer": "^3.2.2",
     "jquery.scrollto": "^2.1.2",
     "jquery.simple-text-rotator": "^0.0.1",
-    "jquery.sticky": "^0.2.1",
+    "jquery-sticky": "^1.0.3",
     "magnific-popup": "^1.1.0",
     "masonry-layout": "^4.2.2",
     "owl-carousel": "1",
