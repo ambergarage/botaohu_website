@@ -401,7 +401,7 @@ jQueryBridget('imagesLoaded', ImagesLoaded, jQuery);
         $(".lightbox").magnificPopup();
 
 
-        $('.mfp-video').magnificPopup({
+        $('.mfp-iframe').magnificPopup({
           type: 'iframe',
 
           iframe: {

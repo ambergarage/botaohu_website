@@ -27,7 +27,7 @@ projects:
     subtitle: An Interactive Virtual Reality Experiment for Storytelling based on Twitter Real-time Data
     url: cityofsparkles.art
     bgvideo_ytid: OKU9gdLisc4
-    trailer_url: https://youtu.be/508if1GD8Ao?v=?cc_load_policy=0&controls=0&fs=1&iv_load_policy=3&loop=0&rel=0&showinfo=0&modestbranding=1&autoplay=1
+    trailer_url: https://youtu.be/?v=508if1GD8Ao?cc_load_policy=0&controls=1&fs=1&iv_load_policy=3&loop=0&rel=0&showinfo=0&modestbranding=1&autoplay=1
   - id: holokit
     type: tech
     title: HoloKit
