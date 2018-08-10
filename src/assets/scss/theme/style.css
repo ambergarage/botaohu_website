@@ -97,7 +97,7 @@ Section Text:       15px/1.7 "Open Sans", arial, sans-serif;
 -------------------------------------------------------------------*/
 
 .mfp-iframe-holder .mfp-content {
-    max-width: 100%;
+    max-width: 1080px;
 }
 
 .mfp-bg {
