@@ -57,7 +57,7 @@
         <div class="js-height-full container">
 
             <!-- Video BG Init -->
-            <div class="player" data-property="{videoURL:'{{ project.bgvideo_ytid }}', containment:'#{{ project.id }}', useOnMobile: true, quality: 'highres', loop:true, autoPlay:true, showControls:false, showYTLogo: false, mute:true, startAt:0, opacity:1, mobileFallbackImage: 'images/{{ project.id }}-video-placeholder.jpg'}">
+            <div class="player" data-property="{videoURL:'{{ project.bgvideo_ytid }}', containment:'#{{ project.id }}', stopMovieOnBlur: false, useOnMobile: true, quality: 'highres', loop:true, autoPlay:true, showControls:false, showYTLogo: false, mute:true, startAt:0, opacity:1, mobileFallbackImage: 'images/{{ project.id }}-video-placeholder.jpg'}">
             </div>
              <!-- End Video BG Init -->
 
