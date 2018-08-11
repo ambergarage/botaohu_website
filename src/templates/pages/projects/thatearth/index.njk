@@ -1,0 +1,10 @@
+{% from 'layouts/content.njk' import project_content %}
+{% extends("layouts/default.njk") %}
+
+{% block content %}
+{% for project in site.projects %}
+  {% if project.id == "thatearth" %}
+    {{ project_content(project) }}
+  {% endif %}
+{% endfor %}
+{% endblock %}

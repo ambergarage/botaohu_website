@@ -1,0 +1,77 @@
+{% macro project_content(project) %}
+  <div class="page project">
+
+    <form action="#" class="hidden">
+      <input type="text" class="page" value="project">
+      <input type="text" class="title" value="{{ project.title }}">
+    </form>
+
+    <div class="links">
+      <a class="close ajax" data-direction="from-left" href="/#{{ project.id }}"></a>
+      <a class="to-top hidden" href="#"></a>
+      {% if project.url %}
+      <a class="view" href="//{{ project.url }}" target="_blank">
+        <span>view website</span>
+      </a>
+      {% endif %}
+      <span class="pagination">slide <span class="current"></span>/<span class="total"></span></span>
+    </div>
+
+    <div class="line after line-to-screen-size">
+      <div class="intro">
+        <div class="left">
+          <div class="container">
+            <div class="content">
+              <h1>{{ project.title }}</h1>
+              <p class="caption">{{ project.type }}.{{ project.date }}.</p>
+              <p class="description">{{ project.caption }}</p>
+              <p class="comment">{{ project.author }}</p>
+              <a href="#" class="arrow">
+                <span></span></a>
+            </div>
+          </div>
+        </div>
+        <div class="right to-load" data-image-url="{{ project.intro_image_url }}"></div>
+      </div>
+    </div>
+
+    {% for slide in project.slides %}
+    <div class="line after">
+      {% if slide.image_url0 and slide.image_url1 %}
+        <div class="element split">
+          <div class="element">
+            <div class="illustration illustration-0 to-load" style="background-color:#f4f4f4" data-image-url="{{ slide.image_url0 }}"></div>
+          </div>
+          <div class="element">
+            <div class="illustration illustration-1 to-load" style="background-color:#f4f4f4" data-image-url="{{ slide.image_url1 }}"></div>
+          </div>
+        </div>
+      {% else %}
+        <div class="element">
+          <div class="illustration illustration-0 to-load" style="background-color:#f4f4f4" data-image-url="{{ slide.image_url }}">
+          </div>
+        </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+{#
+    <div class="line after line-to-screen-size">
+      <div class="outro">
+        <div class="container">
+          <div class="content">
+            <p class="list list-1">
+              <strong>Email</strong>
+              <br>
+              <a class="underline" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+
+            <p class="list list-2">
+              <strong>Location</strong>
+              <br>Atherton, California, USA
+              <br>Santa Monica, California, USA
+            </p>
+          </div>
+        </div>
+      </div>
+    </div> #}
+  </div>
+{% endmacro %}

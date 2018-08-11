@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'aperculight';
+    src: url('../../fonts/apercu-light-webfont.eot');
+    src: url('../../fonts/apercu-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/apercu-light-webfont.woff2') format('woff2'),
+         url('../../fonts/apercu-light-webfont.woff') format('woff'),
+         url('../../fonts/apercu-light-webfont.ttf') format('truetype'),
+         url('../../fonts/apercu-light-webfont.svg#aperculight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'apercuitalic';
+    src: url('../../fonts/apercu-italic-webfont.eot');
+    src: url('../../fonts/apercu-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/apercu-italic-webfont.woff2') format('woff2'),
+         url('../../fonts/apercu-italic-webfont.woff') format('woff'),
+         url('../../fonts/apercu-italic-webfont.ttf') format('truetype'),
+         url('../../fonts/apercu-italic-webfont.svg#apercuitalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'apercuregular';
+    src: url('../../fonts/apercu-regular-webfont.eot');
+    src: url('../../fonts/apercu-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../../fonts/apercu-regular-webfont.woff2') format('woff2'),
+         url('../../fonts/apercu-regular-webfont.woff') format('woff'),
+         url('../../fonts/apercu-regular-webfont.ttf') format('truetype'),
+         url('../../fonts/apercu-regular-webfont.svg#apercuregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
