@@ -6,6 +6,7 @@ module.exports = merge(baseConfig, {
     devtool: 'cheap-module-source-map',
     devServer: {
         port: 8080,
+        https: true,
         publicPath: baseConfig.publicPath,
         watchContentBase: true
     },

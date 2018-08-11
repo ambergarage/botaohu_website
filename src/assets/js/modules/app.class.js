@@ -384,6 +384,9 @@
 
             // Ajax call
             var ajax_promise = Q.defer();
+            if (url.indexOf(document.location.origin) < 0) {
+              url = document.location.origin + url;
+            }
             this.ajax.instance = $.ajax( {
                 url     : url,
                 success : function( res )

@@ -105,7 +105,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(ico|gif|png|jpe?g|svg)$/i,
         exclude: /(a-z A-Z 0-9)*\/(font?s)\//,
         use: [
           {
@@ -207,7 +207,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([{
       context: 'assets/images',
-      from: '**/*.{jpg,jpeg,png,gif,svg}',
+      from: '**/*.{ico,jpg,jpeg,png,gif,svg}',
       to: 'images'
     }, {
       context: 'assets/fonts',
