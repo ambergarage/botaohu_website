@@ -64,7 +64,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "98888e59682f3eab9a63";
+/******/ 	var hotCurrentHash = "0eab1c22e62c364a988a";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -19370,6 +19370,9 @@ var Q = __webpack_require__(/*! q */ "../node_modules/q/q.js");
 
       var ajax_promise = Q.defer();
       this.ajax.instance = $.ajax({
+        xhrFields: {
+          withCredentials: true
+        },
         url: url,
         success: function success(res) {
           that.ajax.instance = null;
@@ -36393,4 +36396,4 @@ module.exports = __webpack_require__(/*! assets/scss/main.scss */"./assets/scss/
 /***/ })
 
 /******/ });
-//# sourceMappingURL=main.98888e59682f3eab9a63.js.map
+//# sourceMappingURL=main.0eab1c22e62c364a988a.js.map
