@@ -1,27 +1,17 @@
 <!DOCTYPE html>
 <html>
-<!-- Head tag -->
-{% include "partials/head.njk" %}
-<body class="appear-animate">
-    
-    <!-- Page Loader -->
-    <div class="page-loader">
-        <div class="loader">Loading...</div>
+  <!-- Head tag -->
+  {% include "partials/head.njk" %}
+  <body>
+    {% include "partials/navigation.njk" %}
+    {% block navigation %}{% endblock %}
+    <!-- COLUMNS -->
+    <div class="columns">
+
+      <div class="column">
+        {% block content %}{% endblock %}
+      </div>
     </div>
-    <!-- End Page Loader -->
-
-    <!-- Page Wrap -->
-    <div class="page" id="top">
-        {% include "partials/navigation.njk" %}
-
-        {% block content %}
-        {% endblock %}
-
-        {% include "partials/footer.njk" %}
-    </div>
-
-    <script type="text/javascript" src="https://www.youtube.com/player_api"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZsDkJFLS0b59q7cmW0EprwfcfUA8d9dg"></script>
-</body>
+    <!-- END COLUMNS -->
+  </body>
 </html>
-

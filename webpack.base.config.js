@@ -19,7 +19,21 @@ const publicPath = '/';
 
 
 const fs = require('fs');
-const walkSync = (d) => fs.statSync(d).isDirectory() ? fs.readdirSync(d).map(f => walkSync(path.join(d, f))) : d;
+// Functions
+// -----------------------------------------------------------------------------
+
+function walkSync(dir, filelist) {
+    files = fs.readdirSync(dir);
+    filelist = filelist || [];
+    files.forEach(function(file) {
+        if (fs.statSync(path.join(dir, file)).isDirectory()) {
+            filelist = walkSync(path.join(dir, file), filelist);
+        } else {
+            filelist.push(path.join(dir, file));
+        }
+    });
+    return filelist;
+}
 
 const siteData = merge({
     root: publicPath,
@@ -213,6 +227,7 @@ module.exports = {
     const templates = walkSync(templateDir);
 
     return templates.map((item, key) => {
+      console.log(item);
       const dir = item.substring(0, item.lastIndexOf("/"));
       const dirOutput = dir.split(templateDir)[1];
       const file = item.substring(item.lastIndexOf('/') + 1);

@@ -1,13 +1,11 @@
-title: Amber Garage
-subtitle: a Silicon Valley based creative art and tech studio
+title: Botao (Amber) Hu
 keywords: Virtual Reality,Creative Studio,SLAM,Robotics,Augmented Reality,Mixed Reality,MR,VR,AR
-description: a Silicon Valley based creative art and tech studio
-url: https://ambergarage.com
-contact_email: info@ambergarage.com
-logo: images/logo-white.png
+description: Botao (Amber) Hu is an interactive art producer and full-time freelancer based in Silicon Valley.
+url: https://botao.hu
+contact_email: botao@ambergarage.com
 favicon: images/favicon.png
 google_analytics_id: UA-76493832-2
-mailchimp_url:
+
 
 author:
   name: Amber Garage
@@ -21,31 +19,72 @@ author:
     twitter: ambergarage
 
 projects:
+  - id: botaohu
+    title: Hello! I'm Botao.
+    caption: I'm a future reality computing creative and new media art producer based in Silicon Valley.
+    url: botao.hu
+    about_trigger: true
+    intro_image_url: /images/botaohu.jpg
+  - id: ambergarage
+    title: Amber Garage
+    type: container
+    date: 2015 - present
+    caption: 'I founded @ambergarage and working on creating new media in a Garage in Silicon Valley.'
+    url: ambergarage.com
+    intro_image_url: /images/projects/ambergarage/ambergarage.jpg
   - id: cityofsparkles
-    type: art
-    title: City of Sparkles
-    subtitle: An Interactive Virtual Reality Experiment for Storytelling based on Twitter Real-time Data
+    title: City Of Sparkles
+    type: new media art project
+    date: 2018
+    caption: I concepted this interactive art piece to tell stories of a New York City with real Twitter Data in Virtual Reality.
+    author: Made with friends of @ambergarage.
     url: cityofsparkles.art
-    bgvideo_ytid: OKU9gdLisc4
-    trailer_url: https://youtu.be/?v=508if1GD8Ao?cc_load_policy=0&controls=1&fs=1&iv_load_policy=3&loop=0&rel=0&showinfo=0&modestbranding=1&autoplay=1
+    intro_image_url: /images/projects/cityofsparkles/cityofsparkles.jpg
   - id: holokit
-    type: tech
-    title: HoloKit
-    subtitle:
+    title: Holokit
+    type: new media tech project
+    date: 2017
+    caption: I invented and open sourced a solution to enable affordable Mixed Reality with large 76 degree field of view.
+    author: Made with friends of @ambergarage.
     url: holokit.io
-    bgvideo_ytid: -wAXphBPj04
-    trailer_url: https://vimeo.com/220422433
-  - id: cityvr
-    type: art
-    title: The City VR Experience
-    subtitle: Walk like a giant alongside skyscrapers
-    url: cityvr.com
-    bgvideo_ytid: z1ey7ZEN8k4
-    trailer_url: https://vimeo.com/184466672
+    intro_image_url: /images/projects/holokit/holokit.jpg
   - id: skywand
-    type: tech
     title: Skywand
-    subtitle: IMMERSIVE MOTION CONTROL FOR AERIAL CINEMATOGRAPHY
+    type: new media tech project
+    date: 2017
+    caption: I invented a solution to automate aerial robotics cinematography via pre-visualization in Virtual Reality.
+    author: Made with friends of @ambergarage.
     url: skywand.com
-    bgvideo_ytid: 4Z1huFzF5bY
-    trailer_url: https://vimeo.com/163223379
+    intro_image_url: /images/projects/skywand/skywand.jpg
+  - id: thatearth
+    title: that.earth
+    type: photography project
+    date: 2014 - present
+    caption: I photo-logged my climbing and paragliding activities with friends in the Mother Nature.
+    url: that.earth
+    intro_image_url: /images/projects/thatearth/castlerock.jpg
+    slides:
+      - image_url: /images/projects/thatearth/sixshooter.jpg
+      - image_url0: /images/projects/thatearth/ancientart1.jpg
+        image_url1: /images/projects/thatearth/ancientart2.jpg
+      - image_url: /images/projects/thatearth/ancientartbottom.jpg
+      - image_url: /images/projects/thatearth/castleton.jpg
+      - image_url0: /images/projects/thatearth/loversleap0.jpg
+        image_url1: /images/projects/thatearth/loversleap1.jpg
+      - image_url: /images/projects/thatearth/moab.jpg
+      - image_url: /images/projects/thatearth/ouray.jpg
+      - image_url: /images/projects/thatearth/pinacle.jpg
+  - id: cityvr
+    title: The City VR Experience
+    type: new media art project
+    date: 2016
+    caption: I dreamed to walk like a giant alongside skyscrapers.
+    url: cityvr.com
+    intro_image_url: /images/projects/cityvr/cityvr.jpg
+  - id: airgraphy
+    title: Airgraphy
+    type: new media art project
+    date: 2016
+    caption: Light painting via drone and augmented reality.
+    url: airgraphy.org
+    intro_image_url: /images/projects/airgraphy/airgraphy.jpg

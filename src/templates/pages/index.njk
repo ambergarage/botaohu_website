@@ -1,193 +1,288 @@
 {% extends("layouts/default.njk") %}
 
-{% macro show_title(project) %}
-{% if project.id == "cityofsparkles"  %}
-<style>
-    .{{ project.id }}-subtitle {
-      font-weight: 800;
-    }
-</style>
-<h2 class="hs-line-special hs-shadow font-alt mb-50 mb-xs-30">
-    {{ project.title }}
-</h2>
-
-<h1 class="hs-line-8 hs-shadow font-alt mb-50 mb-xs-30 {{ project.id }}-subtitle">
-    {{ project.subtitle }}
-</h1>
-{% elif project.id == "holokit" %}
-  <h1 class="mb-50 mb-xs-30">
-      <img width="200px" src="images/holokit.png"></img>
-      <br>
-      <br>
-  </h1>
-{% elif project.id == "cityvr"  %}
-<style>
-    .{{ project.id }}-title {
-        font-family: Futura-Medium, Trebuchet MS, Arial, sans-serif;
-    }
-</style>
-
-<div class="hs-line-4 hs-shadow no-transp font-alt mb-50 mb-xs-30" style="font-weight: 800;">
-    Redefine the way we experience 3D maps
-</div>
-
-<h1 class="hs-line-16 hs-shadow font-alt mb-50 mb-xs-30 {{ project.id }}-title">
-    {{ project.title }}
-</h1>
-
-<h2 class="hs-line-4 hs-shadow no-transp font-alt mb-50 mb-xs-30" style="font-weight: 800;">
-    {{ project.subtitle }}
-</h2>
-
-{% elif project.id == "skywand" %}
-<h1 class="hs-line-14 hs-shadow font-alt mb-50 mb-xs-30 text-center">
-    {{ project.title }}
-</h1>
-
-<h2 class="hs-line-4 hs-shadow font-alt mb-50 mb-xs-30" style="font-weight: 800;">
-    {{ project.subtitle }}
-</h2>
-{% endif %}
-
-{% endmacro %}
-
-
-{% macro slide(project) %}
-    <section class="home-section bg-scroll bg-pattern-over" data-background="images/{{ project.id }}-video-placeholder.jpg" id="{{ project.id }}">
-        <div class="js-height-full container">
-
-            <!-- Video BG Init -->
-            <div class="player" data-property="{videoURL:'{{ project.bgvideo_ytid }}', containment:'#{{ project.id }}', stopMovieOnBlur: false, useOnMobile: true, quality: 'highres', loop:true, autoPlay:true, showControls:false, showYTLogo: false, mute:true, startAt:0, opacity:1, mobileFallbackImage: 'images/{{ project.id }}-video-placeholder.jpg'}">
-            </div>
-             <!-- End Video BG Init -->
-
-            <!-- Hero Content -->
-            <div class="home-content">
-                <div class="home-text">
-
-                  {{ show_title(project) }}
-
-                  <div>
-                      <a href="{{ project.trailer_url | safe }}" class="big-icon-link lightbox mfp-iframe"><span class="big-icon"><i class="fa fa-play"></i></span></a>
-                      <br>
-                      <br>
-                  </div>
-
-                  <div>
-                      <a href="//{{ project.url }}" target="_blank" class="btn btn-mod btn-w btn-medium btn-round">Visit {{ project.url }}</a>
-                  </div>
-                </div>
-            </div>
-            <!-- End Hero Content -->
-        </div>
-    </section>
-{% endmacro %}
-
-
 {% block content %}
-<div class="home-section fullwidth-slider bg-dark" id="home">
-  {% for project in site.projects %}
-    {{ slide(project) }}
-  {% endfor %}
+<div class="page home">
+
+  <form action="#" class="hidden">
+    <input type="text" class="page" value="home">
+    <input type="text" class="title" value="{{ site.title }}">
+  </form>
+
+  <div class="projects-list">
+    {% for project in site.projects %}
+    <a href="#" class="project" data-slug="{{ project.id }}">
+      <span class="icon-container"></span><span class="text">{{ project.title }}</span></a>
+    {% endfor %}
+   {# <a href="#" class="clients">
+      <span class="icon-container"></span><span class="text">Resume</span></a>
+    <a href="#" class="distinctions">
+      <span class="icon-container">
+        <span class="icon gray"></span>
+        <span class="icon black"></span>
+        <span class="icon white"></span></span><span class="text">Distinctions</span></a> #}
+    <a href="#" class="contact">
+      <span class="icon-container">
+        <span class="bar index-1"></span>
+        <span class="bar index-2"></span></span><span class="text">Contact</span></a>
+  </div>
+
+  <a href="#" class="to-top"></a>
+
+  <div class="lines">
+
+    <!-- PROJECTS -->
+
+    {% for project in site.projects %}
+    <div class="line after project current line-{{project.id}} ">
+      <div class="left">
+        <div class="container">
+          <div class="content">
+            {% if project.slides %}
+            <a class="ajax" data-direction="from-right" href="/projects/{{project.id}}" data-project="{{project.id}}">
+            {% elif project.about_trigger %}
+            <a href="#" class="about-trigger">
+            {% else %}
+            <a target="_blank" href="//{{project.url}}" data-project="{{project.id}}">
+            {% endif %}
+              <h2>{{ project.title }}</h2>
+              {% if project.type %}
+              <span class="caption">{{ project.type }}. {{ project.date }}.
+              </span>
+              {% endif %}
+
+              <span class="caption">{{ project.caption }}</span>
+              {% if project.author %}
+              <span class="caption">{{ project.author }}</span>
+              {% endif %}
+              <span class="arrow">
+                <span class="inner"></span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+{#
+    <!-- MAIN CLIENTS -->
+    <div class="line after dark distinctions after line-clients">
+      <div class="left">
+        <div class="container">
+          <div class="content">
+            <strong>Publications</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="container">
+          <div class="content">
+            <ul>
+              <li class="title">As Data Scientists</li>
+              <li>Learning from Click Model and Latent Factor Model for Relevance Prediction Challenge, Workshop on Web Search Click Data (WSCD), 2012.  </li>
+                <li>Personalized Click Model through Collaborative Filtering, In Proceedings of 5th International Conference on Web Search and Data Mining (WSDM), 2012. </li>
+                <li>Characterizing Search Intent Diversity into Click Models, In Proceedings of 20th International World Wide Web Conference (WWW), 2011.  </li>
+                <li>Is Pay-Per-Click Efficient? An Empirical Analysis of Click Values, In Proceedings of 20th International World Wide Web Conference (WWW), 2011. Poster.  </li>
+                <li>Learning Click Model via Probit Bayesian Inference, In Proceedings of 19th ACM Conference on Information and Knowledge Management (CIKM), 2010. </li>
+                <li>Explore click models for search ranking, In Proceedings of 19th ACM Conference on Information and Knowledge Management (CIKM), 2010. Poster. </li>
+              <li>
+                <a target="_blank" class="underline" href="https://www.cssdesignawards.com/sites/ron-dorff/32107/">Talk @ TEDx, January 7, 2018</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="https://www.cssawards.net/nominee/ron-dorff/">Talk @ AR in Action @ MIT, January, 2018</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://the-responsive.com/ron-dorff/">The Responsive : February 9, 2018</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="title">In the News.</li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/web-design-awards/nicolas-bussiere-1">Awwwards : site of the day, March 04, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/web-design-awards/nicolas-bussiere-1">Awwwards : developer award, March 04, 2015</a>
+              </li>
+              <li>
+                Awwwards : nominated for the site of the month, March 2015
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/annual-awards-2015/developer-site-of-the-year">Awwwards : nominated for the developer site of the year, January 2016</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.cssdesignawards.com/sites/nicolas-bussiere/26646/">CSS Design Awards : site of the day, June 12, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.cssawds.com/website/nicolas-bussiere/">CSS Awards : site of the day, February 25, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.siteinspire.com/websites/5381-nicolas-bussiere">Site inspire : March 12, 2015</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="title">Château d’Yquem - mobile website</li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/web-design-awards/chateau-d-yquem">Awwwards : site of the day, December 29, 2014</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.thefwa.com/mobile/ch-teau-d-yquem">FWA : mobile of the day, February 15, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.webbyawards.com/winners/2015/websites/general-website/food-drink/uzik-chateau-dyquem/">The Webby Awards : honore - food & drink, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.siteinspire.com/websites/5203-chateau-d-yquem">Site inspire : June 24, 2015</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="title">Paco Rabanne Black XS - mobile website</li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/best-websites/black-xs-paco-rabanne/">Awwwards : honorable mention, March 12, 2015</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="title">Albin Michel - Que ta volonté soit faite</li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/best-websites/que-ta-volonte-soit-faite-albin-michel-1/">Awwwards : honorable mention, March 10, 2015</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CLIENTS -->
+    <div class="line after dark distinctions after line-clients">
+      <div class="left">
+        <div class="container">
+          <div class="content">
+            <strong>Distinctions<br>&amp; awards</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="container">
+          <div class="content">
+            <ul>
+              <li class="title">Talks and Exhibitions.</li>
+              <li>
+                <a target="_blank" class="underline" href="https://www.awwwards.com/sites/ron-dorff">Talk @ AR in Action @ MIT, January, 2018</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="https://www.cssdesignawards.com/sites/ron-dorff/32107/">Talk @ TEDx, January 7, 2018</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="https://www.cssawards.net/nominee/ron-dorff/">Talk @ AR in Action @ MIT, January, 2018</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://the-responsive.com/ron-dorff/">The Responsive : February 9, 2018</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="title">In the News.</li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/web-design-awards/nicolas-bussiere-1">Awwwards : site of the day, March 04, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/web-design-awards/nicolas-bussiere-1">Awwwards : developer award, March 04, 2015</a>
+              </li>
+              <li>
+                Awwwards : nominated for the site of the month, March 2015
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/annual-awards-2015/developer-site-of-the-year">Awwwards : nominated for the developer site of the year, January 2016</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.cssdesignawards.com/sites/nicolas-bussiere/26646/">CSS Design Awards : site of the day, June 12, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.cssawds.com/website/nicolas-bussiere/">CSS Awards : site of the day, February 25, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.siteinspire.com/websites/5381-nicolas-bussiere">Site inspire : March 12, 2015</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="title">Château d’Yquem - mobile website</li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/web-design-awards/chateau-d-yquem">Awwwards : site of the day, December 29, 2014</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.thefwa.com/mobile/ch-teau-d-yquem">FWA : mobile of the day, February 15, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.webbyawards.com/winners/2015/websites/general-website/food-drink/uzik-chateau-dyquem/">The Webby Awards : honore - food & drink, 2015</a>
+              </li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.siteinspire.com/websites/5203-chateau-d-yquem">Site inspire : June 24, 2015</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="title">Paco Rabanne Black XS - mobile website</li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/best-websites/black-xs-paco-rabanne/">Awwwards : honorable mention, March 12, 2015</a>
+              </li>
+            </ul>
+            <ul>
+              <li class="title">Albin Michel - Que ta volonté soit faite</li>
+              <li>
+                <a target="_blank" class="underline" href="http://www.awwwards.com/best-websites/que-ta-volonte-soit-faite-albin-michel-1/">Awwwards : honorable mention, March 10, 2015</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> #}
+
+    <!-- ABOUT -->
+    <div class="line after dark contact after line-contact">
+      <div class="left">
+        <div class="container">
+          <div class="content">
+            I'm available
+            <br>for
+            <strong>cooperating new media
+              <br>
+              art + tech projects
+            </strong><br>feel free to
+            <br>
+            <strong>contact me</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="container">
+          <div class="content">
+            <p>
+              <strong>Email</strong>
+              <br>
+              <a class="underline" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+            </p>
+            <p>
+              <strong>Location</strong>
+              <br>Atherton, California, USA
+              <br>Santa Monica, California, USA
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="illustrations-container hidden">
+    <div class="illustrations animated">
+      {% for project in site.projects %}
+      <div class="illustration">
+        <div class="illustration-inner to-load" style="background-color:#f4f4f4;" id="{{ project.id }}-background" data-image-url="{{ project.intro_image_url }}">
+            {# <div class=player data-property="{videoURL:'OKU9gdLisc4', containment:'#{{ project.id }}-background', stopMovieOnBlur: false, useOnMobile: true, quality: 'highres', loop:true, autoPlay:true, showControls:false, showYTLogo: false, mute:true, startAt:0, opacity:1, mobileFallbackImage: 'images/mobile-video-placeholder.jpg'}">
+            </div> #}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
-
-<!-- Divider -->
-<hr class="mt-0 mb-0 "/>
-<!-- End Divider -->
-
-<!-- About Section -->
-<section class="page-section" id="about" >
-    <div class="container relative">
-
-        <h2 class="section-title font-alt mb-70 mb-sm-40">
-            About Amber Garage
-        </h2>
-
-        <div class="section-text col-md-8 col-md-offset-2 mb-50 mb-sm-20">
-            <div class="row">
-                <div>
-                    Amber Garage is a Silicon Valley based creative art &amp; tech studio, founded by <a href="//botao.hu/" target="_blank">Botao (Amber) Hu</a>.
-                    We utilize robotics technology for creating new media and new media art.
-                    As artists, we're creating arts based on our own media and tool to bridge the gap between virtual world and reality.
-                    As roboticists, we're thinking how robotics technology can revolutionize the process of creative works.
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End About Section -->
-
-<!-- Divider -->
-<hr class="mt-0 mb-0 "/>
-<!-- End Divider -->
-
-<!-- Contact Section -->
-<section class="page-section bg-gray" id="contact" >
-    <div class="container relative">
-
-        <h2 class="section-title font-alt mb-70 mb-sm-40">
-            Partnerships &amp; Contacts
-        </h2>
-
-         <div class="section-text col-md-8 col-md-offset-2 ">
-            <div class="row mb-50 mb-sm-20">
-                <div>
-                We are looking for partnership with innovators, filmmakers, artists, and creatives to collaborate on creative Robotics + Art projects that use the Skywand technologies.
-                </div>
-            </div>
-
-            <div class="row wow fadeInUp" data-wow-duration="1.5s">
-                  <!-- Email -->
-                  <div class="col-sm-4 pt-20 pb-20 pb-xs-0">
-                      <div class="contact-item">
-                          <div class="ci-icon">
-                              <i class="fa fa-envelope"></i>
-                          </div>
-                          <div class="ci-title font-alt">
-                              Email
-                          </div>
-                          <div class="ci-text">
-                              <a href="mailto:info@ambergarage.com">info@ambergarage.com</a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- End Email -->
-
-                  <!-- Email -->
-                  <div class="col-sm-4 pt-20 pb-20 pb-xs-0">
-                      <div class="contact-item">
-                          <div class="ci-icon">
-                              <i class="fa fa-envelope"></i>
-                          </div>
-                          <div class="ci-title font-alt">
-                              For Skywand
-                          </div>
-                          <div class="ci-text">
-                              <a href="mailto:info@skywand.com">info@skywand.com</a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- End Email -->
-
-                  <!-- Email -->
-                  <div class="col-sm-4 pt-20 pb-20 pb-xs-0">
-                      <div class="contact-item">
-                          <div class="ci-icon">
-                              <i class="fa fa-envelope"></i>
-                          </div>
-                          <div class="ci-title font-alt">
-                              For HoloKit
-                          </div>
-                          <div class="ci-text">
-                              <a href="mailto:info@holokit.io">info@holokit.io</a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- End Email -->
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Contact Section -->
 
 {% endblock %}

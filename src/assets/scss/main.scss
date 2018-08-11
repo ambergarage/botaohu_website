@@ -1,54 +1,53 @@
-/* -----------------------------------------------------------------------------
- * CONFIG
- */
+// /* -----------------------------------------------------------------------------
+//  * CONFIG
+//  */
 
-@import "settings/settings";
-@import "foundations/foundations";
-@import "tools/tools";
+// @import "settings/settings";
+// @import "foundations/foundations";
+// @import "tools/tools";
 
-/* -----------------------------------------------------------------------------
- * BASE
- */
+// /* -----------------------------------------------------------------------------
+//  * BASE
+//  */
 
-@import "generic/generic";
-@import "elements/elements";
-
-
-/* -----------------------------------------------------------------------------
- * ABSTRACTIONS
- */
-
-@import "animations/animations";
-@import "objects/objects";
+// @import "generic/generic";
+// @import "elements/elements";
 
 
-/* -----------------------------------------------------------------------------
- * CONTENT
- */
+// /* -----------------------------------------------------------------------------
+//  * ABSTRACTIONS
+//  */
 
-@import "components/components";
-
-
-/* -----------------------------------------------------------------------------
- * SCOPES
- */
-
-@import "scopes/scopes";
+// @import "animations/animations";
+// @import "objects/objects";
 
 
-/* -----------------------------------------------------------------------------
- * OVERRIDES
- */
+// /* -----------------------------------------------------------------------------
+//  * CONTENT
+//  */
 
-@import "utilities/utilities";
-
-/* -----------------------------------------------------------------------------
- * VENDORS
- */
-
-@import "vendor/vendor";
+// @import "components/components";
 
 
+// /* -----------------------------------------------------------------------------
+//  * SCOPES
+//  */
+
+// @import "scopes/scopes";
+
+
+// /* -----------------------------------------------------------------------------
+//  * OVERRIDES
+//  */
+
+// @import "utilities/utilities";
+
+// /* -----------------------------------------------------------------------------
+//  * VENDORS
+//  */
+
+// @import "vendor/vendor";
+
+@import "theme/reset.css";
+@import "theme/fonts.css";
 @import "theme/style.css";
-@import "theme/style-responsive.css";
-@import "theme/vertical-rhythm.min.css";
