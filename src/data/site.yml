@@ -1,22 +1,19 @@
 title: Botao (Amber) Hu
 keywords: Virtual Reality,Creative Studio,SLAM,Robotics,Augmented Reality,Mixed Reality,MR,VR,AR
-description: Hello! I'm Botao. I'm a future reality computing creative and new media art producer based in Silicon Valley.
+description: Botao Hu is a future reality computing creative and new media art producer based in Silicon Valley.
 url: https://botao.hu
 contact_email: botao@ambergarage.com
 favicon: /images/favicon.ico
-google_analytics_id: UA-76493832-2
+google_analytics_id: UA-20778025-5
 
 
 author:
-  name: Amber Garage
-  url: https://ambergarage.com
-  slogan: a Silicon Valley based creative art & tech studio
+  name: Botao Hu
+  url: https://botao.hu
   social_media:
-    facebook: ambergarage
-    instagram: amber.garage
-    youtube: ambergarage
-    vimeo: ambergarage
-    twitter: ambergarage
+    facebook: botaohu
+    instagram: hupo001
+    twitter: hupo001
 
 projects:
   - id: botaohu
