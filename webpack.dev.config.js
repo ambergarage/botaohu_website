@@ -22,11 +22,11 @@ module.exports = merge(baseConfig, {
             jpegtran: null,
             plugins: [
                 imageminMozjpeg({
-                    quality: 60,
+                    quality: 80,
                     progressive: true
                 }),
                 imageminPngquant({
-                    quality: 95
+                    quality: [0.9, 0.95]
                 })
             ]
         })

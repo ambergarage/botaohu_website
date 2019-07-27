@@ -221,6 +221,10 @@
 
             // Fast click
             FastClick.attach( document.body );
+
+            jQuery('.about-trigger').click(() => {
+                this.header.toggle()
+            });
         },
 
         /**
@@ -267,6 +271,8 @@
             {
                 that.can_scroll = true;
             } );
+
+
         },
 
         /**

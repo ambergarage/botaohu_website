@@ -8,18 +8,16 @@
 //
 
 // import 'imports-loader?this=>window!./modules/modernizr.min';
-import 'q';
-import 'hammerjs';
 import 'tinyscrollbar';
-import {Tweenlite, CSSPlugin, ScrollToPlugin, EasePack} from "gsap/all";
-import 'jquery.mb.ytplayer';
+//import {Tweenlite, CSSPlugin, ScrollToPlugin, EasePack} from "gsap/all";
+//import 'jquery.mb.ytplayer';
 
 import './modules/class.js';
 import 'expose-loader?entry!./modules/app.js';
 import 'imports-loader?APP=>entry.APP!./modules/abstract.class.js';
 
 import 'imports-loader?APP=>entry.APP!./modules/event_emitter.class.js';
-import 'imports-loader?APP=>entry.APP,FastClick=fastclick,Q=q!./modules/app.class.js';
+import 'imports-loader?APP=>entry.APP,Hammer=hammerjs,FastClick=fastclick,Q=q!./modules/app.class.js';
 //
 import 'imports-loader?APP=>entry.APP!./modules/header.class.js';
 import 'imports-loader?APP=>entry.APP!./modules/password.class.js';
@@ -44,7 +42,4 @@ $(document).ready(() => {
 	} );
 	app.start();
 
-  $('.about-trigger').click( () => {
-    app.header.toggle()
-   } );
 });
